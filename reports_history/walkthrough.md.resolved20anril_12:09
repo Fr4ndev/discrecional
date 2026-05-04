@@ -1,0 +1,47 @@
+# BTC/ETH Microstructure Tactical Dossier
+
+Exhaustive institutional audit for BTC and ETH across all horizons. Analysis conducted via the `funding-action-server`.
+
+## BTC Executive Summary
+BTC is displaying **conspicuous institutional bid pressure** at the scalp level, despite broader range consolidation.
+
+### [Institutional Metrics]
+- **Long-Bias Confluence**: 75%
+- **Max OBI (Depth 100)**: `0.6792` (Strong Bid Pressure)
+- **Basis Divergence**: `-0.05%` (Binance Spot Premium/Short Premium)
+- **Open Interest**: `+6.75%` (Cumulative 24h accumulation)
+- **SFP Trigger**: **SENSITIVE** (Early reversal detected)
+
+> [!TIP]
+> **Tactical Verdict (BTC): SCALP LONG BIAS.** 
+> The OBI imbalance (+0.67) combined with Spot premium on Binance suggests institutional absorption. Look for SFP low triggers on H1 to confirm intraday entries.
+
+---
+
+## ETH Executive Summary
+ETH is in a **Liquidity Engine (ELE)** transition phase, showing steady spot accumulation but less aggressive scalp pressure than BTC.
+
+### [Institutional Metrics]
+- **ELE Verdict**: `ELE_ACTIVE` (Medium Potential)
+- **Basis Divergence**: `-0.068%` (Spot Premium Accumulation)
+- **OBI**: `+0.34` (Healthy but not aggressive)
+- **Key Support (Walls)**: `2312.00`
+- **SFP Trigger**: **NONE** (Awaiting distribution/sweep)
+
+> [!NOTE]
+> **Tactical Verdict (ETH): INTRADAY ACCUMULATION.**
+> The ELE engine is active due to persistent spot premium. The transition to a trending move is likely pending a sweep of the H4/Daily lows (2250-2260 area).
+
+---
+
+## Technical Routine Summary
+The following institutional routines were executed flawlessly:
+1. **SFP Confluence Routine**: Detected BTC sensitivity.
+2. **ETH ELE Transition Routine**: Validated spot premium and support walls at 2312.
+3. **Ultra-Deep Routine**: Captured Depth-100 OBI and Swing-Z metrics.
+
+### Validation Artifacts
+The raw metrics were summarized from the following Action Server outputs:
+- [ud_confluence.json](file:///home/wek/Escritorio/ccxtv2/funding_action_server/ud_confluence.json)
+- [tactical_scalp.json](file:///home/wek/Escritorio/ccxtv2/funding_action_server/tactical_scalp.json)
+- [ele_potential.json](file:///home/wek/Escritorio/ccxtv2/funding_action_server/ele_potential.json)

@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════
+# ccxtv2 — Institutional Crypto Analysis Engine
+# ═══════════════════════════════════════════════════
+
+# Exchange Connectivity
+ccxt>=4.2.0
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.26.0
+pytz>=2024.1
+PyYAML>=6.0
+
+# Telegram Bot (Async)
+python-telegram-bot==20.8
+
+# Scheduler
+APScheduler==3.10.4
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+mplfinance>=0.12.10b0
+scipy>=1.10.0
+
+# Machine Learning (KMeans clustering)
+scikit-learn>=1.3.0
+
+# Environment & HTTP
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# HTML Scraping (FundingFees skill)
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Console Output
+tabulate>=0.9.0

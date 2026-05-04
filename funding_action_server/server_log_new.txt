@@ -1,0 +1,25 @@
+
+  ⚡️ Starting Action Server... v3.1.1
+
+Using datadir: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92
+Logs may be found at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server_log.txt.
+Checking migration status for database at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server.db
+Action package seems ok. Bootstrapping RCC environment (please wait, this can take a long time).
+Python interpreter path: /home/wek/.sema4ai/holotree/8ec4064_a78733b_b880070a/bin/python3
+Disabling action: get_open_interest_snapshot
+StreamableHTTP session manager started
+Server info written to: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server-info.json
+
+  ⚡️ Local MCP endpoint: http://localhost:8080/mcp
+
+  ⚡️ Local Action Server: http://localhost:8080
+     Public access: use --expose to expose (OpenAPI only)
+Updating run run-000-f83822d9-1d75-4ec9-9102-41a0187e74ae with changes: 'status': 1 (see: http://localhost:8080/runs/run-000-f83822d9-1d75-4ec9-9102-41a0187e74ae)
+2026-04-17 10:41:54: GET /api/actions/funding-action-server/list 404 Not Found
+Updating run run-000-f83822d9-1d75-4ec9-9102-41a0187e74ae with changes: 'result': <redacted>, 'status': 2, 'run_time': 41.29011920300036 (see: http://localhost:8080/runs/run-000-f83822d9-1d75-4ec9-9102-41a0187e74ae)
+Subprocess kill [pid=9795]
+2026-04-17 10:47:34: GET /openapi.json 200 OK
+2026-04-17 10:47:43: GET /openapi.json 200 OK
+2026-04-17 10:47:51: GET /openapi.json 200 OK
+Updating run run-001-700c6eca-e8a9-44ac-941b-9d8ea482310c with changes: 'status': 1 (see: http://localhost:8080/runs/run-001-700c6eca-e8a9-44ac-941b-9d8ea482310c)
+Updating run run-002-57543ca2-1850-4d8b-8f40-ba3b978ba087 with changes: 'status': 1 (see: http://localhost:8080/runs/run-002-57543ca2-1850-4d8b-8f40-ba3b978ba087)

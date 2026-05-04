@@ -1,0 +1,365 @@
+#!/usr/bin/env python3
+"""
+actions/funding_actions.py
+══════════════════════════
+Sema4.ai Action Server — FundingFeesMarketState tools.
+
+Four @action endpoints:
+  1. get_funding_rates_table     → current multi-DEX rates as JSON
+  2. detect_funding_anomalies    → variance/zscore anomaly detection
+  3. run_full_market_analysis    → Z-Score + SpotDiff + Heatmap trigger
+  4. get_funding_zscore_history  → rolling z-score history for a pair
+
+Start:
+    action-server start --port 8082 --dir /home/wek/Escritorio/ccxtv2/funding_action_server
+"""
+
+import asyncio
+import json
+import logging
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+# ── Bootstrap sys.path so we can import from ccxtv2 root ──────────
+_ROOT = Path(__file__).parent.parent.parent  # ccxtv2/
+sys.path.insert(0, str(_ROOT))
+
+from sema4ai.actions import action
+
+from strategies.funding_fees import FundingFeesEngine
+from strategies.funding_monitor import FundingMonitorEngine
+
+logger = logging.getLogger("FundingActions")
+
+# Singleton engines shared across action calls
+_engine = FundingFeesEngine()
+_monitor_engine = FundingMonitorEngine()
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 1 — Fetch current rates table
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=False)
+async def get_funding_rates_table() -> str:
+    """
+    Fetch the current multi-DEX funding rates.
+
+    Retrieves data from fundingfees.web3crypt.net with an automatic CCXT
+    fallback (BinanceUSDM + Bybit) if scraping fails.
+
+    Returns:
+        str: A JSON-formatted string containing:
+            - status: "ok" or "error"
+            - timestamp: ISO-8601 retrieval time
+            - assets: List of dicts {asset, exchange: rate_pct, ...}
+            - exchanges: List of exchange names present
+            - count: Number of assets returned
+
+    Example:
+        {"status": "ok", "assets": [{"asset": "BTC", "binanceusdm": 0.0013}], ...}
+    """
+    try:
+        df = await _engine.fetch_funding_fees()
+        if df.empty:
+            return json.dumps({"status": "error", "error": "No data returned from any source"})
+
+        exchange_cols = [c for c in df.columns if c not in ("asset", "timestamp")]
+        ts = df["timestamp"].iloc[0] if "timestamp" in df.columns else datetime.now(timezone.utc).isoformat()
+
+        assets = []
+        for _, row in df.iterrows():
+            rec = {"asset": str(row["asset"])}
+            for ex in exchange_cols:
+                val = row.get(ex)
+                rec[ex] = round(float(val), 6) if (val is not None and not pd.isna(val)) else None
+            assets.append(rec)
+
+        return json.dumps({
+            "status": "ok",
+            "timestamp": ts,
+            "assets": assets,
+            "exchanges": exchange_cols,
+            "count": len(assets),
+        })
+
+    except Exception as e:
+        logger.error(f"get_funding_rates_table: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 2 — Detect anomalies
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=False)
+async def detect_funding_anomalies() -> str:
+    """
+    Detect spikes and anomalies in funding rates vs historical state.
+
+    Comparison is made against persisted data in `data/last_rates.json`.
+    Criteria (OR-combined):
+    - Absolute delta >= 5 bps (0.005%)
+    - Rolling Z-score |z| >= 2.0 (30-period window)
+
+    Returns:
+        str: A JSON-formatted string containing:
+            - status: "ok" or "error"
+            - anomaly_count: Integer count of anomalies
+            - anomalies: List of dicts {symbol, exchange, current_rate, 
+                         prev_rate, delta_bps, zscore, severity, direction}
+
+    Example:
+        {"status": "ok", "anomaly_count": 1, "anomalies": [...]}
+    """
+    try:
+        df = await _engine.fetch_funding_fees()
+        if df.empty:
+            return json.dumps({"status": "error", "error": "Could not fetch rates"})
+
+        anomalies = _engine.detect_variances(df)
+        return json.dumps({
+            "status": "ok",
+            "anomaly_count": len(anomalies),
+            "anomalies": anomalies,
+        })
+
+    except Exception as e:
+        logger.error(f"detect_funding_anomalies: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 3 — Full Market State analysis for a symbol
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=True)
+async def run_full_market_analysis(symbol: str, exchange: str = "Hyperliquid") -> str:
+    """
+    Trigger the Market State analysis pipeline for a specific crypto asset.
+
+    Runs parallel Z-Score, SpotDiff, and Heatmap analysis engines for the 
+    specified symbol and sends generated charts to the configured Telegram channel.
+    Typically used manually or as a follow-up to a high-severity anomaly.
+
+    Args:
+        symbol (str): The crypto asset symbol (e.g., "BTC", "ETH").
+        exchange (str, optional): The name of the exchange for context 
+                                  (e.g., "Hyperliquid"). Defaults to "Hyperliquid".
+
+    Returns:
+        str: A JSON-formatted string containing:
+            - status: "ok" or "error"
+            - symbol: The analysed symbol
+            - triggered_engines: List of run engines
+            - message: Status summary description
+
+    Example:
+        run_full_market_analysis("BTC")
+    """
+    try:
+        anomaly = {
+            "symbol": symbol.upper(),
+            "exchange": exchange,
+            "current_rate": 0.0,
+            "prev_rate": 0.0,
+            "delta_bps": 0.0,
+            "zscore": 0.0,
+            "severity": "MANUAL",
+            "direction": "N/A",
+        }
+
+        await _engine.trigger_market_state_analysis(anomaly)
+
+        return json.dumps({
+            "status": "ok",
+            "symbol": symbol.upper(),
+            "exchange": exchange,
+            "triggered_engines": ["zscore", "spotdiff", "heatmap"],
+            "message": (
+                f"Full Market State analysis triggered for {symbol.upper()} "
+                f"({exchange}) — results sent to Telegram."
+            ),
+        })
+
+    except Exception as e:
+        logger.error(f"run_full_market_analysis: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 4 — Z-Score history for a symbol/exchange pair
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=False)
+async def get_funding_zscore_history(symbol: str, exchange: str) -> str:
+    """
+    Fetch the 30-period rolling z-score history for a symbol/exchange pair.
+
+    Returns the historical funding rate observations and current statistical 
+    indicators (mean, std, current z-score) stored for the pair.
+
+    Args:
+        symbol (str): Asset name (e.g. "BTC", "ETH").
+        exchange (str): DEX exchange name (e.g. "Hyperliquid", "Bybit").
+
+    Returns:
+        str: A JSON-formatted string containing:
+            - status: "ok" or "error"
+            - key: "{symbol}_{exchange}"
+            - history: List of floating point rate percentages
+            - current_zscore: The computed Z-Score for the last observation
+            - mean: Rolling mean of the window
+            - std: Rolling standard deviation
+            - window_size: Number of entries in history (max 30)
+
+    Example:
+        get_funding_zscore_history("BTC", "Hyperliquid")
+    """
+    try:
+        state_file = _ROOT / "data" / "last_rates.json"
+        if not state_file.exists():
+            return json.dumps({
+                "status": "error",
+                "error": "No historical data yet. Run the daemon first."
+            })
+
+        with open(state_file) as f:
+            state = json.load(f)
+
+        key = f"{symbol.upper()}_{exchange}"
+        history = state.get("zscore_history", {}).get(key, [])
+
+        if not history:
+            return json.dumps({
+                "status": "ok",
+                "key": key,
+                "history": [],
+                "current_zscore": None,
+                "mean": None,
+                "std": None,
+                "message": "No history found for this pair yet."
+            })
+
+        arr = np.array(history)
+        mean_val = float(arr.mean())
+        std_val = float(arr.std())
+        z = float((arr[-1] - mean_val) / std_val) if std_val > 1e-9 else 0.0
+
+        return json.dumps({
+            "status": "ok",
+            "key": key,
+            "history": [round(v, 6) for v in history],
+            "current_zscore": round(z, 4),
+            "mean": round(mean_val, 6),
+            "std": round(std_val, 6),
+            "window_size": len(history),
+        })
+
+    except Exception as e:
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 5 — Start Funding + OI + OBI Monitor
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=True)
+async def start_funding_monitor() -> str:
+    """
+    Start the real-time background monitor for Funding, OI, and OBI.
+    
+    The monitor continuously aggregates data from Binance, Bybit, OKX, 
+    and Hyperliquid. If a confluence of spikes occurs, it automatically 
+    triggers the Market State Analysis (ZScore, SpotDiff, Heatmap).
+
+    Returns:
+        str: JSON-formatted status of the start operation.
+    """
+    try:
+        if _monitor_engine.is_running:
+            return json.dumps({
+                "status": "ok",
+                "message": "Monitor is already running."
+            })
+            
+        await _monitor_engine.start_background()
+        
+        return json.dumps({
+            "status": "ok",
+            "message": "Background Funding Monitor started successfully.",
+            "config": {
+                "exchanges": _monitor_engine.cfg.exchanges,
+                "assets": _monitor_engine.cfg.assets,
+                "trigger_mode": _monitor_engine.cfg.trigger_mode,
+                "poll_interval_s": _monitor_engine.cfg.poll_interval_seconds
+            }
+        })
+
+    except Exception as e:
+        logger.error(f"start_funding_monitor: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 6 — Get Current Monitor Status
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=False)
+async def get_monitor_status() -> str:
+    """
+    Retrieve the current in-memory status of the Funding Monitor.
+    
+    Returns all indicator values (Funding, ΔFunding 1h, OI, ΔOI 1h, OBI)
+    for all configured assets across all connected exchanges.
+    
+    Returns:
+        str: JSON-formatted dump of all indicator states.
+    """
+    try:
+        if not _monitor_engine.is_running:
+            return json.dumps({
+                "status": "idle",
+                "message": "Monitor is not currently running. Call start_funding_monitor first."
+            })
+            
+        return json.dumps({
+            "status": "ok",
+            "is_running": True,
+            "states": _monitor_engine.current_states
+        })
+
+    except Exception as e:
+        logger.error(f"get_monitor_status: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})
+
+
+# ──────────────────────────────────────────────────────────────────
+# ACTION 7 — Get Latest Trigger Dossier
+# ──────────────────────────────────────────────────────────────────
+@action(is_consequential=False)
+async def get_latest_dossier() -> str:
+    """
+    Retrieve the latest generated dossier report from an automatic trigger.
+    
+    Returns the paths to the JSON and Markdown dossier files, along with
+    the trigger metadata.
+    
+    Returns:
+        str: JSON-formatted info on the latest dossier.
+    """
+    try:
+        last_dossier = _monitor_engine.last_dossier
+        
+        if not last_dossier:
+            return json.dumps({
+                "status": "ok",
+                "message": "No dossiers generated yet in the current session."
+            })
+            
+        return json.dumps({
+            "status": "ok",
+            "dossier": last_dossier
+        })
+
+    except Exception as e:
+        logger.error(f"get_latest_dossier: {e}", exc_info=True)
+        return json.dumps({"status": "error", "error": str(e)})

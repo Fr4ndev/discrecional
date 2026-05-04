@@ -1,0 +1,29 @@
+# 🛰️ Institutional Senior Desk: Massive Multi-Horizon ETH Scan
+Date: 2026-04-06 | 13:05 UTC
+
+Escaneo exhaustivo ejecutado utilizando la arquitectura completa `ccxtv2` (Action Server + SFP Engine + Spoof Sentinels + Whale Daemons).
+
+## 📡 1. Live Action Server Telemetry (ETH)
+*   **Avg OBI (4 exchanges):** `+0.4277` 🟢 (Presión de compra *EXTREMA*, superó el umbral crítico de 0.40).
+*   **Open Interest (OI) Delta:** `+13.09%` 🚀 (Inyección MASIVA de apalancamiento fresco en la última ventana. Entra muchísimo capital apostando fuerte).
+*   **Avg Funding Rate:** `+0.0032%` (Longs pagando, premium alcista).
+
+## 📊 2. Sentinel Daemons (Context)
+*   **Higher Time Frame (SFP_v2.2):** `BEARISH` (La macroestructura sigue dominada a la baja).
+*   **Anti-Spoofing (Spoof_Sentinel):** `ALERTA ROJA` 🚨 (Múltiples snaps de OBI de +0.42 a -0.23, confirmando *liquidity pulling* o manipulación engañosa del libro).
+*   **Whale Sentinel:** Modulo temporalmente fuera de línea por corrupción de timestamps en la base de datos de capturas.
+
+---
+
+## 🎯 Veredictos del Desk (Por Horizonte Temporal)
+
+### ⚡ **SCALP (1m - 5m) => SETUP ACTIVO (GO LONG)**
+*   **Trigger Action Server:** `SENSITIVE (True)`
+*   **Razón:** Hay un desbalance abrumador (+0.42 OBI) justificado por un muro gigante de apalancamiento entrando repentinamente (+13% OI). La inercia inmediata empujará fuertemente al alza.
+
+### ⏱️ **INTRADAY (1h - 4h) => NEUTRAL / PRECAUCIÓN**
+*   **Razón:** Aunque el impulso inicial del Scalp será fuerte, la cantidad agresiva de manipulación falsa y de "muros fantasma" (*spoofing*) vista por los sentinels sugiere que intentarán liquidar posiciones. Hay que cobrar parciales rápido y aplicar *trailing stop* estricto para sobrevivir intradía.
+
+### 📅 **SWING / POSITION (1d+) => RECHAZADO**
+*   **Trigger Action Server:** `CONSERVATIVE (False)`
+*   **Razón:** Está totalmente prohibido mantener un Swing sin cobertura si el HTF (Gráfico Mayor) de 4H y Diario sigue marcando `BEARISH`. Ir en contra de la marea macro a tantos días con un OBI manipulado es apostar a un Squeeze incierto.

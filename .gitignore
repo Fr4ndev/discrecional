@@ -1,0 +1,87 @@
+# Secrets & environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs & runtime data
+logs/*.log
+*.log
+data/snapshots/*
+data/audit_runs/*
+data/server.pid
+data/guardian_hbeat.json
+data/watchlist_levels.json
+controller.log
+rotation.log
+audit_error.log
+
+# Temp files
+*.swp
+*.swo
+.flows_output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large binary / generated
+*.png
+*.jpg
+*.pdf
+graphify-out/
+
+# Node
+node_modules/
+
+# JSON results (runtime data, not source)
+funding_action_server/*.json
+scalp_*.json
+swing_*.json
+intraday_*.json
+pulse_*.json
+fresh_scalp_*.json
+final_*.json
+zscore_elite_*.json
+sfp_*.json
+eth_*.json
+htf_*.json
+btc_*.json
+ele_potential.json
+ict_*.json
+alpha_snapshot.json
+comprehensive_results/*.json
+tactical_*.json
+ud_confluence*.json
+walls_*.json
+*.json
+!config/settings.yaml
+!project_dna_v2.json
+!docs/architecture_v2/*.json
+!audit_summary.json
+!funding_action_server/package.yaml
+!funding_action_server/conda.yaml
+!funding_action_server/server_openapi.json
+
+# Legacy backup (optional, large)
+legacy_backup/
+data/*.pid
+venv

@@ -1,0 +1,65 @@
+
+  ⚡️ Starting Action Server... v3.1.1
+
+Using datadir: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92
+Logs may be found at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server_log.txt.
+Checking migration status for database at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server.db
+Action package seems ok. Bootstrapping RCC environment (please wait, this can take a long time).
+Python interpreter path: /home/wek/.sema4ai/holotree/8ec4064_a78733b_253169dd/bin/python3
+Disabling action: get_open_interest_snapshot
+StreamableHTTP session manager started
+Server info written to: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server-info.json
+
+  ⚡️ Local MCP endpoint: http://localhost:8080/mcp
+
+  ⚡️ Local Action Server: http://localhost:8080
+     Public access: use --expose to expose (OpenAPI only)
+Updating run run-000-e72385a0-0b65-4505-a450-3ba4628632a4 with changes: 'status': 1 (see: http://localhost:8080/runs/run-000-e72385a0-0b65-4505-a450-3ba4628632a4)
+Updating run run-000-e72385a0-0b65-4505-a450-3ba4628632a4 with changes: 'result': <redacted>, 'status': 2, 'run_time': 8.152073736999995 (see: http://localhost:8080/runs/run-000-e72385a0-0b65-4505-a450-3ba4628632a4)
+Subprocess kill [pid=5505]
+2026-04-30 15:01:41: POST /api/actions/funding-action-server/get-toxicity-index/run 200 OK
+Updating run run-001-7d34ef59-b589-4555-9171-601f41dfb257 with changes: 'status': 1 (see: http://localhost:8080/runs/run-001-7d34ef59-b589-4555-9171-601f41dfb257)
+Updating run run-003-0d47765b-4eff-4a8d-891c-aabbea81f79a with changes: 'status': 1 (see: http://localhost:8080/runs/run-003-0d47765b-4eff-4a8d-891c-aabbea81f79a)
+Updating run run-002-8235ea7d-c150-4383-b247-c9086417b8ab with changes: 'status': 1 (see: http://localhost:8080/runs/run-002-8235ea7d-c150-4383-b247-c9086417b8ab)
+Updating run run-004-2acb397b-a7ac-4141-80ca-e4153b15c449 with changes: 'status': 1 (see: http://localhost:8080/runs/run-004-2acb397b-a7ac-4141-80ca-e4153b15c449)
+Updating run run-001-7d34ef59-b589-4555-9171-601f41dfb257 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.637619216000019 (see: http://localhost:8080/runs/run-001-7d34ef59-b589-4555-9171-601f41dfb257)
+Updating run run-004-2acb397b-a7ac-4141-80ca-e4153b15c449 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.472525900999983 (see: http://localhost:8080/runs/run-004-2acb397b-a7ac-4141-80ca-e4153b15c449)
+Subprocess kill [pid=5500]
+2026-04-30 15:02:08: POST /api/actions/funding-action-server/get-toxicity-index/run 200 OK
+Subprocess kill [pid=5605]
+2026-04-30 15:02:08: POST /api/actions/funding-action-server/get-toxicity-index/run 200 OK
+Updating run run-002-8235ea7d-c150-4383-b247-c9086417b8ab with changes: 'result': <redacted>, 'status': 2, 'run_time': 14.865666388000022 (see: http://localhost:8080/runs/run-002-8235ea7d-c150-4383-b247-c9086417b8ab)
+Updating run run-003-0d47765b-4eff-4a8d-891c-aabbea81f79a with changes: 'result': <redacted>, 'status': 2, 'run_time': 14.95235896700001 (see: http://localhost:8080/runs/run-003-0d47765b-4eff-4a8d-891c-aabbea81f79a)
+Subprocess kill [pid=5596]
+2026-04-30 15:02:11: POST /api/actions/funding-action-server/microstructure-audit/run 200 OK
+Subprocess kill [pid=5551]
+2026-04-30 15:02:12: POST /api/actions/funding-action-server/microstructure-audit/run 200 OK
+Updating run run-005-8ed72146-3a50-412d-8d76-9a0c3fdac406 with changes: 'status': 1 (see: http://localhost:8080/runs/run-005-8ed72146-3a50-412d-8d76-9a0c3fdac406)
+Updating run run-006-b2efee4b-5d0f-4222-9296-f8aa72428b5d with changes: 'status': 1 (see: http://localhost:8080/runs/run-006-b2efee4b-5d0f-4222-9296-f8aa72428b5d)
+Updating run run-007-9e21f362-5cd7-4123-b27a-79763aea37be with changes: 'status': 1 (see: http://localhost:8080/runs/run-007-9e21f362-5cd7-4123-b27a-79763aea37be)
+Updating run run-008-18bd950a-894a-4cda-ac37-af58855138fb with changes: 'status': 1 (see: http://localhost:8080/runs/run-008-18bd950a-894a-4cda-ac37-af58855138fb)
+Updating run run-007-9e21f362-5cd7-4123-b27a-79763aea37be with changes: 'result': <redacted>, 'status': 2, 'run_time': 10.247168604000024 (see: http://localhost:8080/runs/run-007-9e21f362-5cd7-4123-b27a-79763aea37be)
+Subprocess kill [pid=5738]
+2026-04-30 15:02:22: POST /api/actions/funding-action-server/get-basis/run 200 OK
+Updating run run-006-b2efee4b-5d0f-4222-9296-f8aa72428b5d with changes: 'result': <redacted>, 'status': 2, 'run_time': 10.768710135999982 (see: http://localhost:8080/runs/run-006-b2efee4b-5d0f-4222-9296-f8aa72428b5d)
+Subprocess kill [pid=5720]
+2026-04-30 15:02:23: POST /api/actions/funding-action-server/get-basis/run 200 OK
+Updating run run-005-8ed72146-3a50-412d-8d76-9a0c3fdac406 with changes: 'result': <redacted>, 'status': 2, 'run_time': 22.92169001900001 (see: http://localhost:8080/runs/run-005-8ed72146-3a50-412d-8d76-9a0c3fdac406)
+Subprocess kill [pid=5710]
+2026-04-30 15:02:35: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-008-18bd950a-894a-4cda-ac37-af58855138fb with changes: 'result': <redacted>, 'status': 2, 'run_time': 37.856411210000005 (see: http://localhost:8080/runs/run-008-18bd950a-894a-4cda-ac37-af58855138fb)
+Subprocess kill [pid=5747]
+2026-04-30 15:02:50: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-009-549bac15-2f9d-4c49-9df0-8bc54c510a53 with changes: 'status': 1 (see: http://localhost:8080/runs/run-009-549bac15-2f9d-4c49-9df0-8bc54c510a53)
+Updating run run-009-549bac15-2f9d-4c49-9df0-8bc54c510a53 with changes: 'result': <redacted>, 'status': 2, 'run_time': 45.40962982299999 (see: http://localhost:8080/runs/run-009-549bac15-2f9d-4c49-9df0-8bc54c510a53)
+Subprocess kill [pid=5859]
+2026-04-30 15:03:36: POST /api/actions/funding-action-server/get-full-market-snapshot/run 200 OK
+Updating run run-010-0847d035-985a-4cc4-aeb5-5d50b3bb9822 with changes: 'status': 1 (see: http://localhost:8080/runs/run-010-0847d035-985a-4cc4-aeb5-5d50b3bb9822)
+Updating run run-010-0847d035-985a-4cc4-aeb5-5d50b3bb9822 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.172141728000042 (see: http://localhost:8080/runs/run-010-0847d035-985a-4cc4-aeb5-5d50b3bb9822)
+Subprocess kill [pid=5909]
+2026-04-30 15:03:47: POST /api/actions/funding-action-server/eth-ele-audit/run 200 OK
+Updating run run-011-4139f5e2-489f-4a0d-8daf-589eb13d927f with changes: 'status': 1 (see: http://localhost:8080/runs/run-011-4139f5e2-489f-4a0d-8daf-589eb13d927f)
+Updating run run-011-4139f5e2-489f-4a0d-8daf-589eb13d927f with changes: 'result': <redacted>, 'status': 2, 'run_time': 42.700076190000004 (see: http://localhost:8080/runs/run-011-4139f5e2-489f-4a0d-8daf-589eb13d927f)
+Subprocess kill [pid=6001]
+2026-04-30 15:04:30: POST /api/actions/funding-action-server/detect-confluence-trigger/run 200 OK
+Error executing action-server: signal: killed

@@ -1,0 +1,618 @@
+{
+  "project": "ccxtv2",
+  "version": "v2.0",
+  "generated": "2026-05-04T21:00:00Z",
+  "source_of_truth": {
+    "graph": "graphify-out/graph.json (1154 nodes, 3202 edges, 76 communities)",
+    "docs_referenced": [
+      "PHD_INTELLIGENCE_SYSTEM.md",
+      "CCXTV2_INTELLIGENCE_MAP.md",
+      "SYSTEM_ARCHITECTUREV3.md",
+      "FLOWS_OPERATING_MANUAL.md",
+      "SESSION_HANDOVER_4_MAYO.md",
+      "AI_OPS_STRATEGIC_INTELLIGENCE.md"
+    ]
+  },
+  "graph_stats": {
+    "total_nodes": 1154,
+    "total_edges": 3202,
+    "total_communities": 76,
+    "total_files": 87,
+    "extraction_ratio": "44% EXTRACTED, 56% INFERRED (avg confidence 0.59)"
+  },
+  "god_nodes_top20": [
+    {
+      "label": "IntelligenceHub",
+      "edges": 158,
+      "community": 1,
+      "file": "core/Core_Intelligence_Hub.py"
+    },
+    {
+      "label": "DataEngine",
+      "edges": 125,
+      "community": 0,
+      "file": "core/data_engine.py"
+    },
+    {
+      "label": ".get()",
+      "edges": 108,
+      "community": 4,
+      "file": "daemons/sfp_advanced_monitor.py"
+    },
+    {
+      "label": "TelegramService",
+      "edges": 108,
+      "community": 0,
+      "file": "alerts/telegram.py"
+    },
+    {
+      "label": "ZScoreEngine",
+      "edges": 96,
+      "community": 0,
+      "file": "strategies/zscore.py"
+    },
+    {
+      "label": "SFPAdvancedMonitor",
+      "edges": 91,
+      "community": 1,
+      "file": "daemons/sfp_advanced_monitor.py"
+    },
+    {
+      "label": "AlertMessage",
+      "edges": 89,
+      "community": 1,
+      "file": "alerts/gateway.py"
+    },
+    {
+      "label": "SentinelGateway",
+      "edges": 83,
+      "community": 1,
+      "file": "alerts/gateway.py"
+    },
+    {
+      "label": "ExecutionEngine",
+      "edges": 80,
+      "community": 1,
+      "file": "core/execution_engine.py"
+    },
+    {
+      "label": "LiquidityAwareStopLoss",
+      "edges": 79,
+      "community": 1,
+      "file": "core/execution_engine.py"
+    },
+    {
+      "label": "AbsorptionDetector",
+      "edges": 75,
+      "community": 5,
+      "file": "funding_action_server/actions/absorption_detector.py"
+    },
+    {
+      "label": "MarketSnapshot",
+      "edges": 72,
+      "community": 1,
+      "file": "core/Core_Intelligence_Hub.py"
+    },
+    {
+      "label": "FundingFeesEngine",
+      "edges": 62,
+      "community": 0,
+      "file": "strategies/funding_fees.py"
+    },
+    {
+      "label": "ICTAlphaV16Task",
+      "edges": 58,
+      "community": 10,
+      "file": "daemons/ict_v16_sentinel.py"
+    },
+    {
+      "label": "TickerConfig",
+      "edges": 58,
+      "community": 0,
+      "file": "core/config.py"
+    },
+    {
+      "label": "HeatmapEngine",
+      "edges": 45,
+      "community": 0,
+      "file": "strategies/heatmap.py"
+    },
+    {
+      "label": "SpotDiffEngine",
+      "edges": 45,
+      "community": 0,
+      "file": "strategies/spotdiff.py"
+    },
+    {
+      "label": "SeniorAuditOrchestrator",
+      "edges": 42,
+      "community": 1,
+      "file": "senior_audit_orchestrator.py"
+    },
+    {
+      "label": "BaseSentinelTask",
+      "edges": 41,
+      "community": 1,
+      "file": "daemons/base.py"
+    },
+    {
+      "label": ".close()",
+      "edges": 40,
+      "community": 2,
+      "file": "core/data_engine.py"
+    }
+  ],
+  "layers": {
+    "data": {
+      "label": "Data Layer \u2014 Exchange Connections & Caching",
+      "modules": [
+        "core/Core_Intelligence_Hub.py",
+        "core/data_engine.py",
+        "core/redis_cache.py",
+        "core/hub_reader.py"
+      ],
+      "communities": [
+        3,
+        10
+      ],
+      "god_nodes": [
+        "IntelligenceHub",
+        "DataEngine"
+      ]
+    },
+    "strategy": {
+      "label": "Strategy Layer \u2014 Quantitative Edge Engines",
+      "modules": [
+        "strategies/zscore.py",
+        "strategies/spotdiff.py",
+        "strategies/heatmap.py",
+        "strategies/orderflow.py",
+        "strategies/funding_fees.py",
+        "strategies/eth_liquidity_engine.py",
+        "strategies/sfp_sentinel_v2.py",
+        "strategies/spotdiff_chart.py",
+        "core/indicators.py"
+      ],
+      "communities": [
+        0,
+        11,
+        15,
+        19,
+        20,
+        21
+      ],
+      "god_nodes": [
+        "ZScoreEngine",
+        "FundingFeesEngine",
+        "HeatmapEngine",
+        "SpotDiffEngine"
+      ]
+    },
+    "action_server": {
+      "label": "Action Server Layer \u2014 REST API & Composite Workflows",
+      "modules": [
+        "funding_action_server/actions/audit_actions.py",
+        "funding_action_server/actions/market_actions.py",
+        "funding_action_server/actions/funding_actions.py",
+        "funding_action_server/actions/absorption_detector.py"
+      ],
+      "communities": [
+        5
+      ],
+      "god_nodes": [
+        "AbsorptionDetector"
+      ]
+    },
+    "daemon": {
+      "label": "Daemon Layer \u2014 Background Sentinels",
+      "modules": [
+        "daemons/Guardian_Daemon.py",
+        "daemons/ict_v16_sentinel.py",
+        "daemons/sfp_advanced_monitor.py",
+        "daemons/level_break_alert.py",
+        "daemons/base.py"
+      ],
+      "god_nodes": [
+        "SFPAdvancedMonitor",
+        "ICTAlphaV16Task"
+      ]
+    },
+    "orchestration": {
+      "label": "Orchestration Layer \u2014 Controller, AI, Routines",
+      "modules": [
+        "controller.py",
+        "auto_senior_analyst.py",
+        "senior_audit_orchestrator.py",
+        "core/ai_analyst.py",
+        "core/ai_orchestrator.py",
+        "core/reactive_router.py"
+      ],
+      "god_nodes": [
+        "SeniorAnalystEngine",
+        "ActionClient",
+        "ReactiveRouter",
+        "SeniorAuditOrchestrator"
+      ]
+    },
+    "sensor": {
+      "label": "Sensor Layer \u2014 Registry-Based Framework",
+      "modules": [
+        "sensors/base.py",
+        "sensors/registry.py",
+        "sensors/legacy_daemon_sensors.py"
+      ],
+      "god_nodes": [
+        "Sensor",
+        "BaseSensor"
+      ]
+    },
+    "alert": {
+      "label": "Alert Layer \u2014 Telegram Gateway & Curation",
+      "modules": [
+        "alerts/gateway.py",
+        "alerts/telegram.py"
+      ],
+      "god_nodes": [
+        "TelegramService",
+        "SentinelGateway",
+        "AlertMessage"
+      ]
+    },
+    "visualization": {
+      "label": "Visualization Layer \u2014 Charts & ML Dashboard",
+      "modules": [
+        "core/visualizer.py",
+        "ml_dashboard.py",
+        "parse_metrics.py"
+      ],
+      "god_nodes": []
+    },
+    "legacy": {
+      "label": "Legacy Layer \u2014 Deprecated/Backup",
+      "modules": [],
+      "god_nodes": []
+    }
+  },
+  "golden_rules": {
+    "VPIN_THRESHOLD": {
+      "value": 0.62,
+      "source": "core/Core_Intelligence_Hub.py:L52",
+      "description": "Informed flow gate \u2014 NO EXECUTION below"
+    },
+    "BASIS_THRESHOLD_PCT": {
+      "value": -0.05,
+      "source": "core/Core_Intelligence_Hub.py:L53",
+      "description": "Spot premium: negative = accumulation stealth"
+    },
+    "OBI_IGNITION": {
+      "value": 0.4,
+      "source": "core/Core_Intelligence_Hub.py:L55",
+      "description": "Coordinated BTC+ETH ignition threshold"
+    },
+    "OBI_SCALP_GATE": {
+      "value": 0.4,
+      "source": "core/Core_Intelligence_Hub.py:L56",
+      "description": "Scalp OBI D20 gate"
+    },
+    "CVD_ACCEL_GATE": {
+      "value": 0.0,
+      "source": "core/Core_Intelligence_Hub.py:L54",
+      "description": "CVD'' must be positive to confirm aggression"
+    },
+    "ABSORPTION_GATE": {
+      "value": 0.6,
+      "source": "core/Core_Intelligence_Hub.py:L57",
+      "description": "Iceberg absorption rate gate"
+    }
+  },
+  "data_flows": [
+    {
+      "id": "DF-01",
+      "from": "Hyperliquid (CCXT)",
+      "to": "IntelligenceHub",
+      "protocol": "REST via CCXT",
+      "data": [
+        "OHLCV",
+        "OrderBook",
+        "Trades",
+        "Ticker",
+        "FundingRate"
+      ],
+      "criticality": "CRITICAL",
+      "failure_mode": "Connection loss \u2192 all daemons stall \u2192 60s cooldown"
+    },
+    {
+      "id": "DF-02",
+      "from": "IntelligenceHub",
+      "to": "TTL Cache",
+      "protocol": "In-memory async dict",
+      "data": [
+        "OHLCV",
+        "OB",
+        "Trades",
+        "Ticker"
+      ],
+      "criticality": "HIGH",
+      "failure_mode": "Stale cache \u2192 outdated metrics \u2192 false signals"
+    },
+    {
+      "id": "DF-03",
+      "from": "IntelligenceHub.market_snapshot()",
+      "to": "Guardian_Daemon._scan_asset()",
+      "protocol": "Async coroutine",
+      "data": [
+        "MarketSnapshot"
+      ],
+      "criticality": "CRITICAL",
+      "failure_mode": "None return \u2192 Guardian skips cycle \u2192 no alerts"
+    },
+    {
+      "id": "DF-04",
+      "from": "Guardian_Daemon",
+      "to": "SignalBus",
+      "protocol": "Pub/Sub typed events",
+      "data": [
+        "sfp_triggered",
+        "spoof_detected",
+        "squeeze_alert"
+      ],
+      "criticality": "HIGH",
+      "failure_mode": "Bus subscriber missing \u2192 signal lost"
+    },
+    {
+      "id": "DF-05",
+      "from": "ReactiveRouter",
+      "to": "CurationBuffer\u2192Gatew\u2192Telegram",
+      "protocol": "Queue 30s buffer",
+      "data": [
+        "UnifiedAlphaPulse"
+      ],
+      "criticality": "MEDIUM",
+      "failure_mode": "Buffer overflow \u2192 truncated alerts"
+    },
+    {
+      "id": "DF-06",
+      "from": "controller/RoutineBridge",
+      "to": "Action Server :8080",
+      "protocol": "HTTP POST",
+      "data": [
+        "toxicity",
+        "microstructure",
+        "basis",
+        "UDC",
+        "tactical"
+      ],
+      "criticality": "HIGH",
+      "failure_mode": "Server down \u2192 on-demand start"
+    },
+    {
+      "id": "DF-07",
+      "from": "Action Server endpoints",
+      "to": "IntelligenceHub (_run_hub_sync)",
+      "protocol": "Sync bridge new_event_loop",
+      "data": [
+        "All Hub public API"
+      ],
+      "criticality": "CRITICAL",
+      "failure_mode": "Event loop nesting \u2192 DEADLOCK"
+    },
+    {
+      "id": "DF-08",
+      "from": "auto_senior_analyst",
+      "to": "Action Server :8080",
+      "protocol": "HTTP POST async",
+      "data": [
+        "Flow results per asset"
+      ],
+      "criticality": "HIGH",
+      "failure_mode": "Timeout \u2192 deterministic fallback"
+    },
+    {
+      "id": "DF-09",
+      "from": "auto_senior_analyst",
+      "to": "DeepSeek API",
+      "protocol": "HTTPS Bearer",
+      "data": [
+        "Market data JSON + skills + prompt"
+      ],
+      "criticality": "MEDIUM",
+      "failure_mode": "API down \u2192 deterministic fallback"
+    },
+    {
+      "id": "DF-10",
+      "from": "DeepSeek response",
+      "to": "reports_history/Dossier_*.md",
+      "protocol": "File write",
+      "data": [
+        "Markdown dossier"
+      ],
+      "criticality": "LOW",
+      "failure_mode": "Disk full \u2192 report lost"
+    },
+    {
+      "id": "DF-11",
+      "from": "daemons",
+      "to": "logs/execution_features.jsonl",
+      "protocol": "JSON lines append",
+      "data": [
+        "Telemetry"
+      ],
+      "criticality": "LOW",
+      "failure_mode": "ML Dashboard empty"
+    }
+  ],
+  "failure_points": [
+    {
+      "id": "FP-01",
+      "severity": "CRITICAL",
+      "title": "Event Loop Deadlock in Composite Actions",
+      "module": "audit_actions.py",
+      "condition": "@action calls @action \u2014 nested _run_async new_event_loop blocks on Hub semaphore",
+      "blast_radius": "All composite workflows",
+      "ref": "SESSION_HANDOVER_4_MAYO.md:L8-15"
+    },
+    {
+      "id": "FP-02",
+      "severity": "CRITICAL",
+      "title": "Singleton Connection Loss \u2014 System Stall",
+      "module": "Core_Intelligence_Hub.py",
+      "condition": "Exchange connection dies \u2192 60s cooldown \u2192 None results cascade",
+      "blast_radius": "All modules consuming Hub",
+      "ref": "Core_Intelligence_Hub.py:L403-428"
+    },
+    {
+      "id": "FP-03",
+      "severity": "HIGH",
+      "title": "VPIN Silent Degradation",
+      "module": "_compute_toxicity",
+      "condition": "OB+trades fetch fail \u2192 vpin=0.0 indistinguishable from low toxicity",
+      "blast_radius": "All flow execution gates",
+      "ref": "Core_Intelligence_Hub.py:L599-648"
+    },
+    {
+      "id": "FP-04",
+      "severity": "HIGH",
+      "title": "Action Server PID Loss",
+      "module": "manage.sh",
+      "condition": "Server crashes at boot \u2192 PID not written \u2192 unrecoverable without manual intervention",
+      "blast_radius": "Action Server lifecycle",
+      "ref": "SESSION_HANDOVER_4_MAYO.md:L53-54"
+    },
+    {
+      "id": "FP-05",
+      "severity": "HIGH",
+      "title": "SeniorAuditOrchestrator Truncated",
+      "module": "senior_audit_orchestrator.py",
+      "condition": "Class missing __init__, execute_all_flows; file appears corrupted",
+      "blast_radius": "Controller import breaks Telegram",
+      "ref": "senior_audit_orchestrator.py:L29-35"
+    },
+    {
+      "id": "FP-06",
+      "severity": "MEDIUM",
+      "title": "TTL Cache Staleness",
+      "module": "_TTLCache",
+      "condition": "15s default TTL during high volatility = stale VPIN feeds",
+      "blast_radius": "Scalp flow latency",
+      "ref": "Core_Intelligence_Hub.py:L330"
+    },
+    {
+      "id": "FP-07",
+      "severity": "MEDIUM",
+      "title": "DeepSeek API Fallback Quality",
+      "module": "auto_senior_analyst.py",
+      "condition": "API key missing \u2192 raw JSON dump without institutional framing",
+      "blast_radius": "Report quality",
+      "ref": "auto_senior_analyst.py:L470-473"
+    },
+    {
+      "id": "FP-08",
+      "severity": "MEDIUM",
+      "title": "Curation Buffer Signal Drop",
+      "module": "alerts/gateway.py",
+      "condition": "Multiple signals in cooldown \u2192 discard before aggregation",
+      "blast_radius": "Telegram alert completeness",
+      "ref": "alerts/gateway.py"
+    },
+    {
+      "id": "FP-09",
+      "severity": "LOW",
+      "title": "Z-Score Division by Zero",
+      "module": "_ZScoreEngine",
+      "condition": "std<1e-9 \u2192 z=0 masks regime builds",
+      "blast_radius": "Funding regime classification",
+      "ref": "Core_Intelligence_Hub.py:L215-216"
+    },
+    {
+      "id": "FP-10",
+      "severity": "LOW",
+      "title": "Test Coverage Gap",
+      "module": "tests/",
+      "condition": "5 tests for 83 source files",
+      "blast_radius": "Untested code paths",
+      "ref": "tests/"
+    }
+  ],
+  "cross_community_edges_top20": [
+    {
+      "communities": "C1<->C5",
+      "edges": 66
+    },
+    {
+      "communities": "C0<->C2",
+      "edges": 60
+    },
+    {
+      "communities": "C0<->C1",
+      "edges": 53
+    },
+    {
+      "communities": "C1<->C3",
+      "edges": 48
+    },
+    {
+      "communities": "C0<->C5",
+      "edges": 47
+    },
+    {
+      "communities": "C1<->C2",
+      "edges": 41
+    },
+    {
+      "communities": "C0<->C4",
+      "edges": 35
+    },
+    {
+      "communities": "C1<->C10",
+      "edges": 35
+    },
+    {
+      "communities": "C2<->C4",
+      "edges": 27
+    },
+    {
+      "communities": "C0<->C8",
+      "edges": 22
+    },
+    {
+      "communities": "C1<->C4",
+      "edges": 22
+    },
+    {
+      "communities": "C4<->C5",
+      "edges": 15
+    },
+    {
+      "communities": "C2<->C6",
+      "edges": 15
+    },
+    {
+      "communities": "C2<->C5",
+      "edges": 11
+    },
+    {
+      "communities": "C2<->C3",
+      "edges": 11
+    },
+    {
+      "communities": "C0<->C7",
+      "edges": 10
+    },
+    {
+      "communities": "C0<->C12",
+      "edges": 10
+    },
+    {
+      "communities": "C1<->C7",
+      "edges": 10
+    },
+    {
+      "communities": "C3<->C4",
+      "edges": 9
+    },
+    {
+      "communities": "C2<->C8",
+      "edges": 9
+    }
+  ]
+}

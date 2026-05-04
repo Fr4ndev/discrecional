@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+logs/
+*.log
+reports_history/
+graphify-out/
+# Deja estos si pesan mucho, pero pruébalos sin ellos primero:
+# data/
+# *.json

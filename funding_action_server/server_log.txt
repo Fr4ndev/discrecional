@@ -1,0 +1,218 @@
+
+  ⚡️ Starting Action Server... v3.1.1
+
+Using datadir: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92
+Logs may be found at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server_log.txt.
+Checking migration status for database at: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server.db
+Action package seems ok. Bootstrapping RCC environment (please wait, this can take a long time).
+Python interpreter path: /home/wek/.sema4ai/holotree/8ec4064_a78733b_b880070a/bin/python3
+Disabling action: get_open_interest_snapshot
+Run run-005-e3a274be-4ef7-4e94-9da7-88a38c120bdf marked as cancelled in Action Server Start (when the Action Server was last shutdown its state was: 'running')
+Run run-006-54079c3d-6710-43a0-bdb3-701d2e4367c5 marked as cancelled in Action Server Start (when the Action Server was last shutdown its state was: 'running')
+StreamableHTTP session manager started
+Server info written to: /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/server-info.json
+
+  ⚡️ Local MCP endpoint: http://localhost:8080/mcp
+
+  ⚡️ Local Action Server: http://localhost:8080
+     Public access: use --expose to expose (OpenAPI only)
+Updating run run-000-d0a0681c-fde0-4026-9c2a-6fa5c3171f9d with changes: 'status': 1 (see: http://localhost:8080/runs/run-000-d0a0681c-fde0-4026-9c2a-6fa5c3171f9d)
+Updating run run-000-d0a0681c-fde0-4026-9c2a-6fa5c3171f9d with changes: 'result': <redacted>, 'status': 2, 'run_time': 36.891409501 (see: http://localhost:8080/runs/run-000-d0a0681c-fde0-4026-9c2a-6fa5c3171f9d)
+Subprocess kill [pid=6945]
+2026-04-08 14:19:52: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-001-71be8a74-a7fe-42e1-b3af-650ee4e44ecf with changes: 'status': 1 (see: http://localhost:8080/runs/run-001-71be8a74-a7fe-42e1-b3af-650ee4e44ecf)
+Updating run run-001-71be8a74-a7fe-42e1-b3af-650ee4e44ecf with changes: 'result': <redacted>, 'status': 2, 'run_time': 20.644815026000003 (see: http://localhost:8080/runs/run-001-71be8a74-a7fe-42e1-b3af-650ee4e44ecf)
+Subprocess kill [pid=6940]
+2026-04-08 14:20:13: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-002-2d2c9a6e-3433-4131-abcd-b8bba52860a1 with changes: 'status': 1 (see: http://localhost:8080/runs/run-002-2d2c9a6e-3433-4131-abcd-b8bba52860a1)
+Updating run run-003-a6d780ef-7306-4828-a940-879961536dfb with changes: 'status': 1 (see: http://localhost:8080/runs/run-003-a6d780ef-7306-4828-a940-879961536dfb)
+Updating run run-003-a6d780ef-7306-4828-a940-879961536dfb with changes: 'result': <redacted>, 'status': 2, 'run_time': 21.286834827999996 (see: http://localhost:8080/runs/run-003-a6d780ef-7306-4828-a940-879961536dfb)
+Subprocess kill [pid=7601]
+2026-04-08 14:22:03: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-002-2d2c9a6e-3433-4131-abcd-b8bba52860a1 with changes: 'result': <redacted>, 'status': 2, 'run_time': 33.33497798600001 (see: http://localhost:8080/runs/run-002-2d2c9a6e-3433-4131-abcd-b8bba52860a1)
+Subprocess kill [pid=7419]
+2026-04-08 14:22:14: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-004-a96264af-917a-4016-b45f-34da83712bdf with changes: 'status': 1 (see: http://localhost:8080/runs/run-004-a96264af-917a-4016-b45f-34da83712bdf)
+Updating run run-004-a96264af-917a-4016-b45f-34da83712bdf with changes: 'result': <redacted>, 'status': 2, 'run_time': 39.50700759499989 (see: http://localhost:8080/runs/run-004-a96264af-917a-4016-b45f-34da83712bdf)
+Subprocess kill [pid=8189]
+2026-04-08 14:33:46: POST /api/actions/funding-action-server/get-ultra-deep-confluence/run 200 OK
+Updating run run-005-57b0d821-414a-4369-be9f-f200ab12a80d with changes: 'status': 1 (see: http://localhost:8080/runs/run-005-57b0d821-414a-4369-be9f-f200ab12a80d)
+Updating run run-005-57b0d821-414a-4369-be9f-f200ab12a80d with changes: 'result': <redacted>, 'status': 2, 'run_time': 39.125811602999875 (see: http://localhost:8080/runs/run-005-57b0d821-414a-4369-be9f-f200ab12a80d)
+Subprocess kill [pid=9490]
+2026-04-08 14:34:25: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-006-64dc0980-e054-4fc9-9982-c7adc77e1276 with changes: 'status': 1 (see: http://localhost:8080/runs/run-006-64dc0980-e054-4fc9-9982-c7adc77e1276)
+Updating run run-006-64dc0980-e054-4fc9-9982-c7adc77e1276 with changes: 'result': <redacted>, 'status': 2, 'run_time': 20.532457991 (see: http://localhost:8080/runs/run-006-64dc0980-e054-4fc9-9982-c7adc77e1276)
+Subprocess kill [pid=8309]
+2026-04-08 14:34:46: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-007-866313af-efd0-4265-9fc4-ad89cbe36c99 with changes: 'status': 1 (see: http://localhost:8080/runs/run-007-866313af-efd0-4265-9fc4-ad89cbe36c99)
+Updating run run-007-866313af-efd0-4265-9fc4-ad89cbe36c99 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.420547603999921 (see: http://localhost:8080/runs/run-007-866313af-efd0-4265-9fc4-ad89cbe36c99)
+Subprocess kill [pid=9736]
+2026-04-08 14:34:58: POST /api/actions/funding-action-server/microstructure-audit/run 200 OK
+Updating run run-008-d2a32bbb-35da-49cd-bd42-045e90d2bb76 with changes: 'status': 1 (see: http://localhost:8080/runs/run-008-d2a32bbb-35da-49cd-bd42-045e90d2bb76)
+Updating run run-008-d2a32bbb-35da-49cd-bd42-045e90d2bb76 with changes: 'result': <redacted>, 'status': 2, 'run_time': 10.551333398999986 (see: http://localhost:8080/runs/run-008-d2a32bbb-35da-49cd-bd42-045e90d2bb76)
+Subprocess kill [pid=9860]
+2026-04-08 14:35:09: POST /api/actions/funding-action-server/microstructure-audit/run 200 OK
+Updating run run-009-4fd8146d-d24d-4336-9321-74366d6d8a4e with changes: 'status': 1 (see: http://localhost:8080/runs/run-009-4fd8146d-d24d-4336-9321-74366d6d8a4e)
+Updating run run-009-4fd8146d-d24d-4336-9321-74366d6d8a4e with changes: 'result': <redacted>, 'status': 2, 'run_time': 10.771109756999977 (see: http://localhost:8080/runs/run-009-4fd8146d-d24d-4336-9321-74366d6d8a4e)
+Subprocess kill [pid=9953]
+2026-04-08 14:35:20: POST /api/actions/funding-action-server/eth-ele-audit/run 200 OK
+Updating run run-010-f4f4d1b1-0445-4d44-a171-a9e9b52fe3f4 with changes: 'status': 1 (see: http://localhost:8080/runs/run-010-f4f4d1b1-0445-4d44-a171-a9e9b52fe3f4)
+Updating run run-010-f4f4d1b1-0445-4d44-a171-a9e9b52fe3f4 with changes: 'result': <redacted>, 'status': 2, 'run_time': 6.926966984000046 (see: http://localhost:8080/runs/run-010-f4f4d1b1-0445-4d44-a171-a9e9b52fe3f4)
+Subprocess kill [pid=10032]
+2026-04-08 14:35:27: POST /api/actions/funding-action-server/get-ob-walls/run 200 OK
+Updating run run-011-a55b33b6-64b1-4e1d-ad5d-9d7c42630e80 with changes: 'status': 1 (see: http://localhost:8080/runs/run-011-a55b33b6-64b1-4e1d-ad5d-9d7c42630e80)
+Updating run run-011-a55b33b6-64b1-4e1d-ad5d-9d7c42630e80 with changes: 'result': <redacted>, 'status': 2, 'run_time': 6.1745967200001814 (see: http://localhost:8080/runs/run-011-a55b33b6-64b1-4e1d-ad5d-9d7c42630e80)
+Subprocess kill [pid=10109]
+2026-04-08 14:35:33: POST /api/actions/funding-action-server/get-basis/run 200 OK
+Updating run run-012-9b440e7c-54fa-41b3-ac3c-3b4429e6ed1b with changes: 'status': 1 (see: http://localhost:8080/runs/run-012-9b440e7c-54fa-41b3-ac3c-3b4429e6ed1b)
+Updating run run-012-9b440e7c-54fa-41b3-ac3c-3b4429e6ed1b with changes: 'result': <redacted>, 'status': 2, 'run_time': 18.619818678 (see: http://localhost:8080/runs/run-012-9b440e7c-54fa-41b3-ac3c-3b4429e6ed1b)
+Subprocess kill [pid=10173]
+2026-04-08 14:40:20: POST /api/actions/funding-action-server/get-ultra-deep-confluence/run 200 OK
+Updating run run-013-58f496f0-16bb-4918-b4f4-c79b2d09cb01 with changes: 'status': 1 (see: http://localhost:8080/runs/run-013-58f496f0-16bb-4918-b4f4-c79b2d09cb01)
+output (pid: 6945): 
+output (pid: 6945): Pre-loading module: preload_actions
+output (pid: 6945): 
+output (pid: 6945): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 6945): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 6945): [96mget_tactical_report[0m status: PASS
+output (pid: 6945): ================================================================================
+output (pid: 6945): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-000-d0a0681c-fde0-4026-9c2a-6fa5c3171f9d/log.html
+output (pid: 6940): 
+output (pid: 6940): Pre-loading module: preload_actions
+output (pid: 6940): 
+output (pid: 6940): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 6940): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 6940): [96mget_tactical_report[0m status: PASS
+output (pid: 6940): ================================================================================
+output (pid: 6940): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-001-71be8a74-a7fe-42e1-b3af-650ee4e44ecf/log.html
+output (pid: 7419): 
+output (pid: 7419): Pre-loading module: preload_actions
+output (pid: 7419): 
+output (pid: 7419): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 7601): 
+output (pid: 7601): Pre-loading module: preload_actions
+output (pid: 7601): 
+output (pid: 7601): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 7419): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 7601): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 7601): [96mget_tactical_report[0m status: PASS
+output (pid: 7601): ================================================================================
+output (pid: 7601): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-003-a6d780ef-7306-4828-a940-879961536dfb/log.html
+output (pid: 7419): [96mget_tactical_report[0m status: PASS
+output (pid: 7419): ================================================================================
+output (pid: 7419): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-002-2d2c9a6e-3433-4131-abcd-b8bba52860a1/log.html
+output (pid: 8189): 
+output (pid: 8189): Pre-loading module: preload_actions
+output (pid: 8189): 
+output (pid: 8189): Collecting action get_ultra_deep_confluence from: actions/funding_actions.py
+output (pid: 8189): ====================== Running: [96mget_ultra_deep_confluence[0m ======================
+output (pid: 8189): [96mget_ultra_deep_confluence[0m status: PASS
+output (pid: 8189): ================================================================================
+output (pid: 8189): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-004-a96264af-917a-4016-b45f-34da83712bdf/log.html
+output (pid: 9490): 
+output (pid: 9490): Pre-loading module: preload_actions
+output (pid: 9490): 
+output (pid: 9490): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 9490): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 9490): [96mget_tactical_report[0m status: PASS
+output (pid: 9490): ================================================================================
+output (pid: 9490): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-005-57b0d821-414a-4369-be9f-f200ab12a80d/log.html
+output (pid: 8309): 
+output (pid: 8309): Pre-loading module: preload_actions
+output (pid: 8309): 
+output (pid: 8309): Collecting action get_tactical_report from: actions/funding_actions.py
+output (pid: 8309): ========================= Running: [96mget_tactical_report[0m =========================
+output (pid: 8309): [96mget_tactical_report[0m status: PASS
+output (pid: 8309): ================================================================================
+output (pid: 8309): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-006-64dc0980-e054-4fc9-9982-c7adc77e1276/log.html
+output (pid: 9736): 
+output (pid: 9736): Pre-loading module: preload_actions
+output (pid: 9736): 
+output (pid: 9736): Collecting action microstructure_audit from: actions/audit_actions.py
+output (pid: 9736): ======================== Running: [96mmicrostructure_audit[0m =========================
+output (pid: 9736): [96mmicrostructure_audit[0m status: PASS
+output (pid: 9736): ================================================================================
+output (pid: 9736): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-007-866313af-efd0-4265-9fc4-ad89cbe36c99/log.html
+output (pid: 9860): 
+output (pid: 9860): Pre-loading module: preload_actions
+output (pid: 9860): 
+output (pid: 9860): Collecting action microstructure_audit from: actions/audit_actions.py
+output (pid: 9860): ======================== Running: [96mmicrostructure_audit[0m =========================
+output (pid: 9860): [96mmicrostructure_audit[0m status: PASS
+output (pid: 9860): ================================================================================
+output (pid: 9860): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-008-d2a32bbb-35da-49cd-bd42-045e90d2bb76/log.html
+output (pid: 9953): 
+output (pid: 9953): Pre-loading module: preload_actions
+output (pid: 9953): 
+output (pid: 9953): Collecting action eth_ele_audit from: actions/audit_actions.py
+output (pid: 9953): ============================ Running: [96meth_ele_audit[0m ============================
+output (pid: 9953): [96meth_ele_audit[0m status: PASS
+output (pid: 9953): ================================================================================
+output (pid: 9953): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-009-4fd8146d-d24d-4336-9321-74366d6d8a4e/log.html
+output (pid: 10032): 
+output (pid: 10032): Pre-loading module: preload_actions
+output (pid: 10032): 
+output (pid: 10032): Collecting action get_ob_walls from: actions/market_actions.py
+output (pid: 10032): ============================ Running: [96mget_ob_walls[0m =============================
+output (pid: 10032): [96mget_ob_walls[0m status: PASS
+output (pid: 10032): ================================================================================
+output (pid: 10032): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-010-f4f4d1b1-0445-4d44-a171-a9e9b52fe3f4/log.html
+output (pid: 10109): 
+output (pid: 10109): Pre-loading module: preload_actions
+output (pid: 10109): 
+output (pid: 10109): Collecting action get_basis from: actions/market_actions.py
+output (pid: 10109): ============================== Running: [96mget_basis[0m ==============================
+output (pid: 10109): [96mget_basis[0m status: PASS
+output (pid: 10109): ================================================================================
+output (pid: 10109): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-011-a55b33b6-64b1-4e1d-ad5d-9d7c42630e80/log.html
+output (pid: 10173): 
+output (pid: 10173): Pre-loading module: preload_actions
+output (pid: 10173): 
+output (pid: 10173): Collecting action get_ultra_deep_confluence from: actions/funding_actions.py
+output (pid: 10173): ====================== Running: [96mget_ultra_deep_confluence[0m ======================
+output (pid: 10173): [96mget_ultra_deep_confluence[0m status: PASS
+output (pid: 10173): ================================================================================
+output (pid: 10173): Log (html): /home/wek/.sema4ai/action-server/funding_action_server_7c12ff92/artifacts/run-012-9b440e7c-54fa-41b3-ac3c-3b4429e6ed1b/log.html
+output (pid: 10705): 
+output (pid: 10705): Pre-loading module: preload_actions
+output (pid: 10705): 
+output (pid: 10705): Collecting action get_tactical_report from: actions/funding_actions.py
+Updating run run-013-58f496f0-16bb-4918-b4f4-c79b2d09cb01 with changes: 'result': <redacted>, 'status': 2, 'run_time': 21.60782243100016 (see: http://localhost:8080/runs/run-013-58f496f0-16bb-4918-b4f4-c79b2d09cb01)
+Subprocess kill [pid=10705]
+2026-04-08 14:40:42: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-014-847f6c9b-f80f-401d-ba90-a7fe81862fc5 with changes: 'status': 1 (see: http://localhost:8080/runs/run-014-847f6c9b-f80f-401d-ba90-a7fe81862fc5)
+Updating run run-014-847f6c9b-f80f-401d-ba90-a7fe81862fc5 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.193105709000065 (see: http://localhost:8080/runs/run-014-847f6c9b-f80f-401d-ba90-a7fe81862fc5)
+Subprocess kill [pid=10227]
+2026-04-08 14:40:53: POST /api/actions/funding-action-server/get-tactical-report/run 200 OK
+Updating run run-015-4172eec2-b2b5-4fa3-92a8-e6172e177ec7 with changes: 'status': 1 (see: http://localhost:8080/runs/run-015-4172eec2-b2b5-4fa3-92a8-e6172e177ec7)
+Updating run run-015-4172eec2-b2b5-4fa3-92a8-e6172e177ec7 with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.263519794000104 (see: http://localhost:8080/runs/run-015-4172eec2-b2b5-4fa3-92a8-e6172e177ec7)
+Subprocess kill [pid=10925]
+2026-04-08 14:41:05: POST /api/actions/funding-action-server/microstructure-audit/run 200 OK
+Updating run run-016-45455972-6b1b-48cb-b129-a796083ff106 with changes: 'status': 1 (see: http://localhost:8080/runs/run-016-45455972-6b1b-48cb-b129-a796083ff106)
+Updating run run-016-45455972-6b1b-48cb-b129-a796083ff106 with changes: 'result': <redacted>, 'status': 2, 'run_time': 6.381713144000059 (see: http://localhost:8080/runs/run-016-45455972-6b1b-48cb-b129-a796083ff106)
+Subprocess kill [pid=10832]
+2026-04-08 14:41:11: POST /api/actions/funding-action-server/get-ob-walls/run 200 OK
+Updating run run-017-9455a827-f556-417b-bd37-175ed439e0cb with changes: 'status': 1 (see: http://localhost:8080/runs/run-017-9455a827-f556-417b-bd37-175ed439e0cb)
+Updating run run-017-9455a827-f556-417b-bd37-175ed439e0cb with changes: 'result': <redacted>, 'status': 2, 'run_time': 6.189921856999945 (see: http://localhost:8080/runs/run-017-9455a827-f556-417b-bd37-175ed439e0cb)
+Subprocess kill [pid=11000]
+2026-04-08 14:41:18: POST /api/actions/funding-action-server/get-basis/run 200 OK
+Updating run run-018-5a2834db-44d4-42fd-bc96-914b4b127aeb with changes: 'status': 1 (see: http://localhost:8080/runs/run-018-5a2834db-44d4-42fd-bc96-914b4b127aeb)
+Updating run run-018-5a2834db-44d4-42fd-bc96-914b4b127aeb with changes: 'result': <redacted>, 'status': 2, 'run_time': 18.31325922499991 (see: http://localhost:8080/runs/run-018-5a2834db-44d4-42fd-bc96-914b4b127aeb)
+Subprocess kill [pid=11052]
+2026-04-08 14:41:36: POST /api/actions/funding-action-server/get-full-market-snapshot/run 200 OK
+Updating run run-019-2db006aa-1b60-4f11-94bc-753b0fdcc823 with changes: 'status': 1 (see: http://localhost:8080/runs/run-019-2db006aa-1b60-4f11-94bc-753b0fdcc823)
+Updating run run-019-2db006aa-1b60-4f11-94bc-753b0fdcc823 with changes: 'result': <redacted>, 'status': 2, 'run_time': 25.790540770000007 (see: http://localhost:8080/runs/run-019-2db006aa-1b60-4f11-94bc-753b0fdcc823)
+Subprocess kill [pid=11110]
+2026-04-08 14:42:02: POST /api/actions/funding-action-server/detect-confluence-trigger/run 200 OK
+2026-04-08 14:51:42: GET /api/actions/funding-action-server/list 404 Not Found
+2026-04-08 14:53:43: GET /api/actions/funding-action-server/list 404 Not Found
+Updating run run-020-fa61229e-40ae-47e7-af1f-47af4cc80b45 with changes: 'status': 1 (see: http://localhost:8080/runs/run-020-fa61229e-40ae-47e7-af1f-47af4cc80b45)
+Updating run run-020-fa61229e-40ae-47e7-af1f-47af4cc80b45 with changes: 'result': <redacted>, 'status': 2, 'run_time': 45.02764063699988 (see: http://localhost:8080/runs/run-020-fa61229e-40ae-47e7-af1f-47af4cc80b45)
+Subprocess kill [pid=11387]
+2026-04-08 14:54:29: POST /api/actions/funding-action-server/get-ultra-deep-confluence/run 200 OK
+Updating run run-021-28878900-9f61-4bd6-9f5b-ed3261007d6f with changes: 'status': 1 (see: http://localhost:8080/runs/run-021-28878900-9f61-4bd6-9f5b-ed3261007d6f)
+Updating run run-021-28878900-9f61-4bd6-9f5b-ed3261007d6f with changes: 'result': <redacted>, 'status': 2, 'run_time': 11.568983097 (see: http://localhost:8080/runs/run-021-28878900-9f61-4bd6-9f5b-ed3261007d6f)
+Subprocess kill [pid=11224]
+2026-04-08 14:54:41: POST /api/actions/funding-action-server/eth-ele-audit/run 200 OK
+Updating run run-022-113f4483-95c9-4813-ab92-b0736e4bca10 with changes: 'status': 1 (see: http://localhost:8080/runs/run-022-113f4483-95c9-4813-ab92-b0736e4bca10)
+Updating run run-023-a650ff68-02ac-45dd-a52c-4b3a2ee6296a with changes: 'status': 1 (see: http://localhost:8080/runs/run-023-a650ff68-02ac-45dd-a52c-4b3a2ee6296a)

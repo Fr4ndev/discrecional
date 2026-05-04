@@ -1,0 +1,71 @@
+# BTC/ETH Microstructure Tactical Dossier
+
+Exhaustive institutional audit for BTC and ETH across all horizons. Analysis conducted via the `funding-action-server`.
+
+## BTC Executive Summary
+BTC is displaying **conspicuous institutional bid pressure** at the scalp level, despite broader range consolidation.
+
+### [Institutional Metrics]
+- **Long-Bias Confluence**: 75%
+- **Max OBI (Depth 100)**: `0.6792` (Strong Bid Pressure)
+- **Basis Divergence**: `-0.05%` (Binance Spot Premium)
+- **SFP Trigger**: **SENSITIVE**
+
+### [Tactical Execution Zones]
+| Horizon | Entry Zone | Take Profit (TP) | Invalidation |
+| :--- | :--- | :--- | :--- |
+| **Scalp** | 75,150 - 75,250 | 75,800 - 75,900 | < 74,800 |
+| **Intraday** | 74,500 - 74,800 | 76,200 (24h High) | < 73,600 |
+
+> [!TIP]
+> **Tactical Verdict (BTC): SCALP LONG BIAS.** 
+> The OBI imbalance (+0.67) combined with Spot premium suggests institutional absorption. SFP Sensitive trigger indicates early long momentum.
+
+---
+
+## ETH Executive Summary
+ETH is in a **Liquidity Engine (ELE)** transition phase, showing steady spot accumulation.
+
+### [Institutional Metrics]
+- **ELE Verdict**: `ELE_ACTIVE` (Medium Potential)
+- **Basis Divergence**: `-0.068%` (Spot Premium Accumulation)
+- **Key Support (Walls)**: `2312.00`
+- **SFP Trigger**: **NONE**
+
+### [Tactical Execution Zones]
+| Horizon | Entry Zone | Take Profit (TP) | Invalidation |
+| :--- | :--- | :--- | :--- |
+| **Scalp** | 2,305 - 2,315 | 2,330 (H4 High) | < 2,290 |
+| **Intraday** | 2,260 - 2,275 | 2,354 (Daily High) | < 2,240 |
+
+> [!NOTE]
+> **Tactical Verdict (ETH): INTRADAY ACCUMULATION.**
+> The ELE engine is active. The high-conviction intraday transition is pending a sweep of the H4/Daily lows (2250-2260 zone).
+
+---
+
+## 🏗️ Macro Swing Audit (Weeks/Days)
+Statistical and structural analysis for the multi-week horizon.
+
+### [Statistical Horizon (14d Z-Score)]
+- **BTC**: `+1.18` (Normal/Trend Continuation)
+- **ETH**: `+0.08` (Fair Value/Consolidation)
+
+### [Swing Execution Zones]
+| Asset | Bias | Entry Zone (Weekly Retest) | Macro Target | Invalidation (Weekly) |
+| :--- | :--- | :--- | :--- | :--- |
+| **BTC** | Bullish | 70,500 - 71,500 | 82,000 - 85,000 | < 65,000 |
+| **ETH** | Bullish | 2,050 - 2,150 | 2,600 - 2,800 | < 1,900 |
+
+> [!IMPORTANT]
+> **Swing Verdict: ACCUMULATE ON DIP.**
+> Both assets are in a healthy uptrend. The 14-day Z-scores indicate no statistical exhaustion yet, suggesting the macro top is not in. High-probability swing entries reside at the Monthly/Weekly low retests.
+
+---
+
+## Technical Routine Summary
+Routine audits completed:
+1. **SFP Confluence Routine**: BTC sensitive trigger (+).
+2. **ETH ELE Transition Routine**: Validated spot premium accumulation.
+3. **Ultra-Deep Routine**: Depth-100 OBI confirms institutional bid side.
+4. **HTF Structure Audit**: Weekly/Monthly trend continuation verified.

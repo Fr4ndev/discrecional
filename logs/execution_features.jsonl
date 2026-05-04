@@ -1,0 +1,2 @@
+{"timestamp": "2026-04-27T11:08:25.807845+00:00", "symbol": "ETH/USDT:USDT", "vpin_score": 0.68, "obi_delta": 0.155, "basis_premium": -0.0004, "intended_price": 2320.0, "final_execution_price": 2320.5, "execution_strategy": "Single", "slippage_real": 0.000216, "is_high_entropy": true}
+{"timestamp": "2026-04-27T11:14:46.709514+00:00", "symbol": "ETH/USDT:USDT", "vpin_score": 0.68, "obi_delta": 0.155, "basis_premium": -0.0004, "intended_price": 2320.0, "final_execution_price": 2320.5, "execution_strategy": "Single", "slippage_real": 0.000216, "is_high_entropy": true}
